@@ -4,5 +4,6 @@ namespace Ganaderia.App.Dominio
     {
         public float Latitude { get; set; }
         public float Longitud { get; set; }
+        
     }
 }
