@@ -6,6 +6,17 @@
 
 <img src="~/assets/logo-mintic.jpg" class="rounded" alt="Responsive image">
 <form>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Ganaderos</label>
+        <select class="form-control" id="mySelect" onchange="myFunction()">
+            <option>Seleccione una opción</option>
+            @foreach (var ganadero in Model.Ganaderos)
+            {
+                <option>@ganadero.Nombres</option>
+            }
+        </select>
+    </div>
     <div class="row">
         <div class="col">
             <input type="text" class="form-control" placeholder="First name">
@@ -30,26 +41,38 @@
         <label for="exampleFormControlInput1">Direccion</label>
         <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Correo</label>
-        <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Contraseña</label>
-        <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Repetir contraseña</label>
-        <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Sexo</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>Hombre</option>
-            <option>Mujer</option>
-        </select>
-    </div>
-    <div>
-        <button type="button" class="btn btn-primary">Registro</button>
-    </div>
+    @if (Model.tipoPerfil == "Ganadero")
+    {
+
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Correo</label>
+            <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Contraseña</label>
+            <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Repetir contraseña</label>
+            <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-primary">Registro</button>
+        </div>
+    }
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("mySelect").value;
+            alert(x);
+        }
+    </script>
+
+
+
 </form>
