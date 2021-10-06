@@ -24,7 +24,7 @@ namespace Ganaderia.App.Presentacion.Pages
                 NumeroTelefono = "3148596563",
                 Direccion = "Kra 4 #45-12",
                 Correo = "sergio.mintic@ucaldas.edu.co",
-                Contrasena = "123456",
+                Password = "123456",
                 Latitude = 7455,
                 Longitud = 5333
             };
@@ -36,7 +36,7 @@ namespace Ganaderia.App.Presentacion.Pages
                 NumeroTelefono = "3148596563",
                 Direccion = "Kra 4 #45-12",
                 Correo = "Pedro@ucaldas.edu.co",
-                Contrasena = "123456",
+                Password = "123456",
                 Latitude = 7455,
                 Longitud = 5333
             };
@@ -48,7 +48,7 @@ namespace Ganaderia.App.Presentacion.Pages
                 NumeroTelefono = "3148596563",
                 Direccion = "Kra 4 #45-12",
                 Correo = "James@ucaldas.edu.co",
-                Contrasena = "123456",
+                Password = "123456",
                 Latitude = 7455,
                 Longitud = 5333
             };

@@ -8,6 +8,7 @@ namespace Ganaderia.App.Consola
     {
 
         private static IRepositorioGanadero _repoGanadero = new RepositorioGanadero(new Persistencia.AppContext());
+        private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
@@ -15,8 +16,9 @@ namespace Ganaderia.App.Consola
             //AddGanadero();
             //GetAllGanaderos();
             //UpdateGanadero();
-            DeleteGanadero(1003);
+            //DeleteGanadero(1003);
             //GetGanadero(1);
+            AddVeterinario();
         }
 
         private static void AddGanadero() 
@@ -28,7 +30,7 @@ namespace Ganaderia.App.Consola
                 NumeroTelefono = "3148596563",
                 Direccion = "Kra 4 #45-12",
                 Correo = "sergio.mintic@ucaldas.edu.co",
-                Contrasena = "123456",
+                Password = "123456",
                 Latitude = 7455,
                 Longitud = 5333
             };
@@ -54,7 +56,7 @@ namespace Ganaderia.App.Consola
                 NumeroTelefono = "3148596563",
                 Direccion = "Kra 4 #45-12",
                 Correo = "sergio.mintic@ucaldas.edu.co",
-                Contrasena = "123456",
+                Password = "123456",
                 Latitude = 7455,
                 Longitud = 5333
             };
@@ -80,6 +82,23 @@ namespace Ganaderia.App.Consola
         {
             var ganadero = _repoGanadero.GetGanadero(idGanadero);
             Console.WriteLine("El nombre del ganadero es: " + ganadero.Nombres);
+        }
+
+        private static void AddVeterinario() 
+        {
+            var veterinario = new Veterinario
+            {
+                Nombres = "Juan",
+                Apellidos = "Cuadrado",
+                NumeroTelefono = "3125653211",
+                Direccion = "Kra 1 #98-96",
+                Correo = "juan@ucaldas.edu.co",
+                Password = "987654",
+                Especialidad = "Médico general",
+                NumeroTarjeta = "2563256"
+
+            };
+            _repoVeterinario.AddVeterinario(veterinario);
         }
     }
 }
